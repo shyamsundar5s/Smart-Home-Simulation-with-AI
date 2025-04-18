@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Home Dashboard</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Smart Home Dashboard</h1>
+    <div>
+        <h2>Devices</h2>
+        <p>Lights: {{ devices.lights.status }}</p>
+        <p>AC: {{ devices.ac.status }}</p>
+    </div>
+    <div>
+        <h2>Control Panel</h2>
+        <button onclick="updateSensors()">Update Sensors</button>
+        <button onclick="controlDevice('lights', 'on')">Turn Lights On</button>
+        <button onclick="controlDevice('ac', 'on')">Turn AC On</button>
+    </div>
+    <script>
+        function updateSensors() {
+            $.post('/update_sensors', {}, function(data) {
+                alert('Sensors updated: ' + JSON.stringify(data));
+            });
+        }
+        function controlDevice(device, action) {
+            $.post('/control_device', JSON.stringify({device, action}), function(data) {
+                alert('Device controlled: ' + JSON.stringify(data));
+            });
+        }
+    </script>
+</body>
+</html>
