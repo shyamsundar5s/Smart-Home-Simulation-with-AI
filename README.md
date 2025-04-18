@@ -57,17 +57,17 @@ This project is a **Smart Home System** that simulates and automates the control
 
 ## 📂 Project Structure
 smart-home-simulation/
-├── app.py                    # Flask app entry point
+├── app.py                    
 ├── templates/
-│   └── dashboard.html        # HTML dashboard for web interface
+│   └── dashboard.html       
 ├── static/
-│   └── style.css             # Styling for dashboard
+│   └── style.css             
 ├── models/
-│   ├── prediction_model.py   # Machine learning model
-│   └── data_logger.py        # Data logging and retrieval
+│   ├── prediction_model.py   
+│   └── data_logger.py        
 ├── database/
-│   └── smart_home.db         # SQLite database for logs
+│   └── smart_home.db         
 ├── sensors/
-│   ├── motion_sensor.py      # Simulated motion sensor
-│   └── temperature_sensor.py # Simulated temperature sensor
-└── README.md                 # Project documentation
+│   ├── motion_sensor.py      
+│   └── temperature_sensor.py 
+└── README.md                 
